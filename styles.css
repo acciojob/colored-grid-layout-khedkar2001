@@ -1,16 +1,11 @@
-body {
-	margin: 0;
-	padding: 0;
-}
-
-.grid-container {
+#grid {
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	grid-template-rows: repeat(5, 150px);
+	grid-template-rows: repeat(5, 124px);
+	grid-template-columns: repeat(4, 242.5px);
 	gap: 5px;
 }
 
-.item {
+#grid > div {
 	background-color: green;
 	color: white;
 	font-size: 4vw;
@@ -19,26 +14,23 @@ body {
 	align-items: center;
 }
 
-/* 1st element spans all 4 columns */
-.item:nth-child(1) {
-	grid-column: 1 / span 4;
+/* First element spans all 4 columns */
+#grid > div:nth-child(1) {
+	grid-column: span 4;
 }
 
-/* 2nd element spans 4 rows */
-.item:nth-child(2) {
-	grid-row: 2 / span 4;
+/* Second element spans 4 rows */
+#grid > div:nth-child(2) {
+	grid-row: span 4;
 }
 
 /* 4th and 5th elements span 2 columns each */
-.item:nth-child(4) {
-	grid-column: 2 / span 2;
-}
-
-.item:nth-child(5) {
-	grid-column: 4 / span 2; /* This will auto-adjust */
+#grid > div:nth-child(4),
+#grid > div:nth-child(5) {
+	grid-column: span 2;
 }
 
 /* 10th element spans 3 columns */
-.item:nth-child(10) {
-	grid-column: 2 / span 3;
+#grid > div:nth-child(10) {
+	grid-column: span 3;
 }
